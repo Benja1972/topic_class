@@ -20,6 +20,7 @@ Given a set independent topics with topic-words distribution, with TopicModel it
 
 ```python
 import numpy as np
+from topic_class import TopicModel
 
 # topic tokens
 tokens =  [['camera','vision','light','algorithm','reconstruction','stereo','geometry','imaging','color','field'],
@@ -32,16 +33,16 @@ w = [abs(np.random.randn(len(tk))) for tk in tokens]
 
 topics = [topic(w[i],tk) for i,tk in enumerate(tokens)]
 
+# create model
 tm = TopicModel(topics)
-topa =  tm[0]
-topb =  tm[2]
-topc = topic(np.array([0.1,0.3,0.4,0.5,0.1,0.001]),['add','topic','to','class', 'in', 'time'])
 
+# add new topic
+topc = topic(np.array([0.1,0.3,0.4,0.5,0.1,0.001]),['add','topic','to','class', 'in', 'time'])
 tm.add_topic(topc, inplace=True)
 
 
-print("Topic A: \n", topa.strip())
-print("Topic B: \n", topb.strip())
+print("Topic A: \n", tm[2].strip())
+print("Topic B: \n", tm[0].strip())
 
 
 sent = "light survey frame opinion computer  video system response time".split()
