@@ -2,6 +2,8 @@ from gensim.matutils import jaccard, cossim
 from gensim.matutils import corpus2dense
 from gensim import corpora
 from joblib import dump, load
+import numpy as np
+
 
 class dictionary(object):
     """
@@ -295,8 +297,7 @@ def text2sent(text, voc=None):
 
 
 if __name__ == "__main__":
-    import numpy as np
-
+    
     # topic tokens
     tokens =  [['camera','vision','light','algorithm','reconstruction','stereo','geometry','imaging','color','field'],
                 ['video','action','motion','human','temporal','sequence','frame','recognition','model','scene'],
