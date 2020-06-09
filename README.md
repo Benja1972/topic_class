@@ -31,6 +31,7 @@ w = [abs(np.random.randn(len(tk))) for tk in tokens]
 
 topics = [topic(w[i],tk) for i,tk in enumerate(tokens)]
 ```
+
 Basic class *topic* is used to create single topic
 *topic* class is very sophisticated, it has:
 
