@@ -34,13 +34,13 @@ topics = [topic(w[i],tk) for i,tk in enumerate(tokens)]
 Basic class *topic* is used to create single topic
 *topic* class is very sophisticated, it has:
 
-- its own dictionary,
+- its own *dictionary*,
 - can be extended to new dictionary,
 - can be striped with removing zero-weighted entries,
 - it has property of bag-of-word,
-- one can extract top_n words sorted by weights and re-weighed
+- one can extract *top_n* words sorted by weights and re-weighed
 
-Now we can create a TopicModel
+Now we can create a *TopicModel*
 
 ```python
 # Create model
@@ -60,7 +60,7 @@ tm.add_topic(top_new, inplace=True)
 
 ```
 
- *TopicModel* class and topic class contain *dictionary* class to keep vocabulary of class in enumerated order presenting id2token and token2id as attributes
+ *TopicModel* class and *topic* class contain *dictionary* class to keep vocabulary of class in enumerated order presenting id2token and token2id as attributes
  dictionary class also provide ability to created dictionary from text
 
 ```python
