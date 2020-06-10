@@ -39,7 +39,7 @@ Basic class *topic* is used to create single topic
 - can be extended to new dictionary,
 - can be striped with removing zero-weighted entries,
 - it has property of bag-of-word,
-- one can extract *top_n* words sorted by weights and re-weighed
+- one can extract *top_n* words sorted by weights and re-weighted
 
 Now we can create a *TopicModel*
 
