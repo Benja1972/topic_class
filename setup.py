@@ -12,7 +12,7 @@ setup(name='topic_class',
       author_email='benja1972@gmail.com',
       license='MIT',
       packages=['topic_class'],
-      install_requires=['gensim', 'numpy', 'joblib'],
+      install_requires=['gensim', 'numpy', 'joblib', 'scikit-learn'],
       python_requires='>=3.6',
       include_package_data=True,
       zip_safe=True)
