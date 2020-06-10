@@ -18,12 +18,12 @@ tm = TopicModel(topics)
 # Basic class topic is used to create single topic
 top_new = topic(np.array([0.1,0.3,0.4,0.5,0.1,0.001]),['add','topic','to','class', 'in', 'time'])
 
-# topic class is very sofisticated, it has 
+# topic class is very sophisticated, it has 
 #- its own dictionary, 
 #- can be extended to new dictionary, 
-#- can be striped with removing zero-wighted entries, 
-#- it has properity of bag-of-word, 
-#- one can extract top_n words sorted by weights and re-weithed
+#- can be striped with removing zero-weighted entries, 
+#- it has property of bag-of-word, 
+#- one can extract top_n words sorted by weights and re-weighted
 
 print('Top 5 words of topic\n', top_new.top_n(5))
 
@@ -45,10 +45,10 @@ print("Topic B: \n", tm[0].strip())
 
 
 
-# External text can be anaylysed based on several similarity metrics for all topics in TopicModel
+# External text can be analysed based on several similarity metrics for all topics in TopicModel
 sent = "light survey frame opinion computer  video system response time".split()
 
-# Fucntion text2sent() helps to translate text to weigheted bag-of-words 
+# Function text2sent() helps to translate text to weighted bag-of-words 
 sent = text2sent(sent)
 
 # Similarity of text to all topics of TopicModel are calculated 
