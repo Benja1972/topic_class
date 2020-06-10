@@ -1,1 +1,1 @@
-from topic_class import *
+from .topic_class import *
