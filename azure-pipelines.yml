@@ -36,6 +36,6 @@ steps:
 
 - script: |
     python setup.py sdist
-    python -m twine upload -r topic_class --config-file $(PYPIRC_PATH) dist/*
+    python -m twine upload -r alpha10x --config-file $(PYPIRC_PATH) dist/*
   displayName: 'Publish package' 
 
