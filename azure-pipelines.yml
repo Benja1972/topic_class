@@ -16,12 +16,27 @@ strategy:
       python.version: '3.7'
 
 steps:
+- task: TwineAuthenticate@1
+  displayName: 'Twine Authenticate '
+
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
 - script: |
+    python -m pip install twine --user
+  displayName: 'Install Twine'
+
+- script: |
+    python -m pip install twine --user
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
+
+- script: |
+    python setup.py sdist
+    python -m twine upload -r <your-pipeline-name> --config-file
+    $(PYPIRC_PATH) dist/*
+  displayName: 'Publish package' 
+
