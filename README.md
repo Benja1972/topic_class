@@ -9,7 +9,7 @@ Topic modeling using different approaches produce topics in form of topic-words 
 Python code for the TopicModel can be installed via pip:
 
 ```sh
-pip install {link to git repo}
+pip install git+https://github.com/Benja1972/topic_class.git
 ```
 
 ### Running the TopicModel example
