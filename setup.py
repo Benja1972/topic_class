@@ -5,7 +5,7 @@ with open('README.md',"r") as f:
     long_description = f.read()
 
 setup(name='topic_class',
-      version='0.1.0',
+      version='0.2.0',
       description='This package consists of Topic Model class ',
       url='https://github.com/Benja1972/topic_class',
       author='Sergei Rybalko',
