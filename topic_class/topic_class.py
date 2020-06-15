@@ -224,6 +224,10 @@ class TopicModel(object):
         """
         if metric=='jaccard':
             return [self.sim_jaccard(tp,sent) for tp in self]
+        elif metric=='counts':
+            jcs = [self.sim_jaccard(tp,sent) for tp in self]
+            cnt = [1 if jc>1e-20 else 0 for jc in jcs]
+            return cnt
         elif metric=='cosine':
             return [self.sim_cossim(tp,sent) for tp in self]
         elif metric=='soft-cosine':
@@ -418,13 +422,15 @@ if __name__ == "__main__":
 
     # pretrained gensim word2vec
     # == Load Word2vec and extract term index
-    w2v_mdl = Word2Vec.load("./models/w2v-cv.model")
+    #w2v_mdl = Word2Vec.load("./models/w2v-cv.model")
+    
     # topic weights
     w = [abs(np.random.randn(len(tk))) for tk in tokens]
 
     topics = [topic(w[i],tk) for i,tk in enumerate(tokens)]
     
-    tm = TopicModel(topics,w2v_mdl)
+    #tm = TopicModel(topics,w2v_mdl)
+    tm = TopicModel(topics)
     topa =  tm[0]
     topb =  tm[2]
     topc = topic(np.array([0.1,0.3,0.4,0.5,0.1,0.001]),['add','topic','to','class', 'in', 'time'])
@@ -439,6 +445,7 @@ if __name__ == "__main__":
     sent = "light survey frame opinion computer  video system response time".split()
     sent = text2sent(sent)
     print('Sent classify Jaccard:', tm.classify(sent))
+    print('Sent classify Counts:', tm.classify(sent, metric='counts'))
     print('Sent classify Cosine:', tm.classify(sent, metric='cosine'))
     print('sent classify soft-cosine',tm.classify(sent,metric='soft-cosine'))
     print('sent classify embedding+cosine',tm.classify(sent,metric='embedding+cosine'))

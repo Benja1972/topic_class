@@ -10,13 +10,13 @@ pool:
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
-    Python36:
-      python.version: '3.6'
     Python37:
       python.version: '3.7'
 
 steps:
 - task: TwineAuthenticate@1
+  inputs:
+    artifactFeed: alpha10x
   displayName: 'Twine Authenticate '
 
 - task: UsePythonVersion@0
