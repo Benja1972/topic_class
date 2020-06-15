@@ -17,6 +17,11 @@ strategy:
 
 steps:
 - task: TwineAuthenticate@1
+<<<<<<< HEAD
+=======
+  inputs:
+    artifactFeed: alpha10x
+>>>>>>> 1b266c89259cbd5cd7d445d7357ad8cd232fd711
   displayName: 'Twine Authenticate '
 
 - task: UsePythonVersion@0
